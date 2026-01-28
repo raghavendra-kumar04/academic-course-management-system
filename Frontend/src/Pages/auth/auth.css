@@ -8,6 +8,7 @@
   overflow: hidden;
 }
 
+
 /* blurred background layer */
 .auth-container::before {
   content: "";
@@ -66,7 +67,7 @@
 }
 
 .auth-btn:hover {
-  background: #4338ca;
+  background: #4438ca;
   transform: translateY(-2px);
   box-shadow: 0 10px 20px rgba(79,70,229,0.3);
 }

@@ -9,7 +9,7 @@ export default function Navbar() {
       <div className="navbar-content">
         {/* Logo */}
         <div className="logo">
-          <Link to="/">📘 CourseMS</Link>
+          <Link to="/">CourseMS</Link>
         </div>
 
         {/* Navigation */}
