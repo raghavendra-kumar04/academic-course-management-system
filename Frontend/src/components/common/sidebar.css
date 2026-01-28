@@ -1,0 +1,31 @@
+.sidebar {
+  position: fixed;
+  left: -260px;
+  top: 70px;
+  width: 260px;
+  height: calc(100vh - 70px);
+  background: #111827;
+  color: white;
+  padding: 20px;
+  transition: 0.4s ease;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 12px 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.sidebar li:hover {
+  color: #a5b4fc;
+  transform: translateX(5px);
+}
