@@ -1,14 +1,26 @@
-/* src/pages/auth/auth.css */
-
 .auth-container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #6ee7ff, #a78bfa);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: "Segoe UI", sans-serif;
+  position: relative;
+  overflow: hidden;
 }
 
+
+/* blurred background layer */
+.auth-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/background-image.png") center/cover no-repeat;
+  filter: blur(4px);
+  transform: scale(1.05); /* prevents blur edges */
+  z-index: 0;
+}
+
+/* login card stays sharp */
 .auth-card {
   background: white;
   padding: 2.5rem;
@@ -16,7 +28,10 @@
   border-radius: 14px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.15);
   animation: fadeIn 0.6s ease;
+  position: relative;
+  z-index: 1;
 }
+
 
 .auth-card h2 {
   text-align: center;
@@ -24,7 +39,7 @@
   color: #4f46e5;
 }
 
-.auth-card input {
+.auth-card input, select {
   width: 100%;
   padding: 12px;
   margin-bottom: 1rem;
@@ -52,7 +67,7 @@
 }
 
 .auth-btn:hover {
-  background: #4338ca;
+  background: #4438ca;
   transform: translateY(-2px);
   box-shadow: 0 10px 20px rgba(79,70,229,0.3);
 }

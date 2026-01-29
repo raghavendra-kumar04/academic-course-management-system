@@ -9,7 +9,7 @@ export default function Register() {
 
         <input type="text" placeholder="Full Name" required/>
         <input type="email" placeholder="Email" required/>
-        <input type="password" placeholder="Password" required/>
+        <input type="password" placeholder="Your password" required/>
         <select required>
             <option value="">Select Role</option>
             <option value="student">Student</option>
@@ -19,7 +19,7 @@ export default function Register() {
         <button className="auth-btn">Register</button>
 
         <div className="auth-links">
-          <Link to="/">Already have an account? Login</Link>
+          <Link to="/login">Already have an account? Login</Link>
         </div>
       </div>
     </div>
