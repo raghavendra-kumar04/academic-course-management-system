@@ -40,13 +40,17 @@
 }
 
 .auth-card input, select {
-  width: 100%;
+  width: 93%;
   padding: 12px;
   margin-bottom: 1rem;
   border-radius: 8px;
   border: 1px solid #ddd;
   outline: none;
   transition: 0.3s;
+}
+
+.auth-card select {
+  width: 100%;
 }
 
 .auth-card input:focus {
