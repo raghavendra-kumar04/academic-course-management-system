@@ -1,4 +1,9 @@
 /* components/common/navbar.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 .navbar {
   position: sticky;

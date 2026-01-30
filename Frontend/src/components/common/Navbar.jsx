@@ -41,6 +41,18 @@ export default function Navbar() {
             </ul>
           </li>
 
+                    {/* Admin Dropdown */}
+          <li className="dropdown">
+            <span className="dropbtn">Admin ▾</span>
+            <ul className="dropdown-content">
+              <li><Link to="/admin/dashboard">Dashboard</Link></li>
+              <li><Link to="/admin/users">User Management</Link></li>
+              <li><Link to="/admin/courses">Course Setup</Link></li>
+              <li><Link to="/admin/calendar">Academic Calendar</Link></li>
+              <li><Link to="/admin/reports">Reports</Link></li>
+            </ul>
+          </li>
+
           <li><Link to="/login" className="nav-btn">Login</Link></li>
         </ul>
       </div>

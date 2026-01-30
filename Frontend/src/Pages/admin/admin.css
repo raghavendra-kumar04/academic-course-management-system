@@ -1,0 +1,94 @@
+/* src/pages/admin/admin.css */
+
+.admin-page {
+  min-height: 100vh;
+  padding: 90px 24px 24px;
+  background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+  color: #1e1b4b;
+  animation: fadeIn 0.6s ease;
+}
+
+/* Header */
+.admin-header {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  background: linear-gradient(135deg, #4f46e5, #8b5cf6);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Cards */
+.admin-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+.admin-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: 0.4s ease;
+  border: 1px solid rgba(79,70,229,0.08);
+}
+
+.admin-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(79,70,229,0.25);
+}
+
+/* Buttons */
+.admin-btn {
+  padding: 10px 24px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.admin-btn.primary {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: #ffffff;
+}
+
+.admin-btn.primary:hover {
+  transform: scale(1.05);
+}
+
+/* Table */
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 14px;
+  border-bottom: 1px solid #e0e7ff;
+}
+
+.admin-table th {
+  background: #e0e7ff;
+  color: #3730a3;
+  text-align: left;
+}
+
+.admin-table tr:hover {
+  background: #eef2ff;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

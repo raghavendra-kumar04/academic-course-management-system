@@ -14,6 +14,12 @@ import CourseManagement from "./Pages/teacher/CourseManagement";
 import AssignmentCreation from "./Pages/teacher/AssignmentCreation";
 import Submissions from "./Pages/teacher/Submissions";
 import GradeEntry from "./Pages/teacher/GradeEntry";
+// Admin Pages
+import AdminDashboard from "./Pages/admin/AdminDashboard";
+import UserManagement from "./Pages/admin/UserManagement";
+import CourseSetup from "./Pages/admin/CourseSetup";
+import AcademicCalendar from "./Pages/admin/AcademicCalendar";
+import Reports from "./Pages/admin/Reports";
 
 function App() {
   return (
@@ -33,6 +39,11 @@ function App() {
       <Route path="/teacher/create-assignment" element={<AssignmentCreation />} />
       <Route path="/teacher/submissions" element={<Submissions />} />
       <Route path="/teacher/grade-entry" element={<GradeEntry />} />
+      <Route path="/admin/dashboard" element={<AdminDashboard />} />
+      <Route path="/admin/users" element={<UserManagement />} />
+      <Route path="/admin/courses" element={<CourseSetup />} />
+      <Route path="/admin/calendar" element={<AcademicCalendar />} />
+      <Route path="/admin/reports" element={<Reports />} />
     </Routes>
     </BrowserRouter>
   );
