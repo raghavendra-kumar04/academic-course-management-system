@@ -8,6 +8,12 @@ import MyCourses from "./Pages/student/MyCourses";
 import Assignments from "./Pages/student/Assignments";
 import SubmitAssignment from "./Pages/student/SubmitAssignment";
 import Grades from "./Pages/student/Grades";
+// Teacher Pages
+import TeacherDashboard from "./Pages/teacher/TeacherDashboard";
+import CourseManagement from "./Pages/teacher/CourseManagement";
+import AssignmentCreation from "./Pages/teacher/AssignmentCreation";
+import Submissions from "./Pages/teacher/Submissions";
+import GradeEntry from "./Pages/teacher/GradeEntry";
 
 function App() {
   return (
@@ -22,6 +28,11 @@ function App() {
       <Route path="/student/assignments" element={<Assignments />} />
       <Route path="/student/submit" element={<SubmitAssignment />} />
       <Route path="/student/grades" element={<Grades />} />
+      <Route path="/teacher/dashboard" element={<TeacherDashboard />} />
+      <Route path="/teacher/courses" element={<CourseManagement />} />
+      <Route path="/teacher/create-assignment" element={<AssignmentCreation />} />
+      <Route path="/teacher/submissions" element={<Submissions />} />
+      <Route path="/teacher/grade-entry" element={<GradeEntry />} />
     </Routes>
     </BrowserRouter>
   );

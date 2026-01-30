@@ -29,6 +29,18 @@ export default function Navbar() {
             </ul>
           </li>
 
+          {/* Teacher Dropdown */}
+          <li className="dropdown">
+            <span className="dropbtn">Teacher ▾</span>
+            <ul className="dropdown-content">
+              <li><Link to="/teacher/dashboard">Dashboard</Link></li>
+              <li><Link to="/teacher/courses">Courses</Link></li>
+              <li><Link to="/teacher/create-assignment">Create Assignment</Link></li>
+              <li><Link to="/teacher/submissions">Submissions</Link></li>
+              <li><Link to="/teacher/grade-entry">Grade Entry</Link></li>
+            </ul>
+          </li>
+
           <li><Link to="/login" className="nav-btn">Login</Link></li>
         </ul>
       </div>
