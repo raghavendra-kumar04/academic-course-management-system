@@ -50,7 +50,7 @@
 .home-content h1 {
   font-size: 3rem;
   margin-bottom: 16px;
-  background: linear-gradient(135deg, #3857d0, #eea9ff);
+  background: linear-gradient(90deg,rgb(4, 0, 73) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
   -webkit-background-clip: text;
   color: transparent;
 }
@@ -102,6 +102,8 @@
   background: linear-gradient(135deg, #6366f1, #8b5cf6);
   transform: translateY(-4px) scale(1.02);
 }
+
+
 
 /* Animation */
 @keyframes fadeUp {

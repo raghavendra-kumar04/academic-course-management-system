@@ -16,10 +16,10 @@ export default function Navbar() {
         {/* Navigation */}
         <ul className="nav-links">
           <li><Link to="/">Home</Link></li>
-          <li><Link to="/links">Links</Link></li>
+          <li><Link to="/about">About</Link></li>
 
           {/* Student Dropdown */}
-          <li className="dropdown">
+          {/* <li className="dropdown">
             <span className="dropbtn">Student ▾</span>
             <ul className="dropdown-content">
               <li><Link to="/student/dashboard">Dashboard</Link></li>
@@ -28,10 +28,10 @@ export default function Navbar() {
               <li><Link to="/student/submit">Submit</Link></li>
               <li><Link to="/student/grades">Grades</Link></li>
             </ul>
-          </li>
+          </li> */}
 
           {/* Teacher Dropdown */}
-          <li className="dropdown">
+          {/* <li className="dropdown">
             <span className="dropbtn">Teacher ▾</span>
             <ul className="dropdown-content">
               <li><Link to="/teacher/dashboard">Dashboard</Link></li>
@@ -40,10 +40,10 @@ export default function Navbar() {
               <li><Link to="/teacher/submissions">Submissions</Link></li>
               <li><Link to="/teacher/grade-entry">Grade Entry</Link></li>
             </ul>
-          </li>
+          </li> */}
 
                     {/* Admin Dropdown */}
-          <li className="dropdown">
+          {/* <li className="dropdown">
             <span className="dropbtn">Admin ▾</span>
             <ul className="dropdown-content">
               <li><Link to="/admin/dashboard">Dashboard</Link></li>
@@ -52,7 +52,7 @@ export default function Navbar() {
               <li><Link to="/admin/calendar">Academic Calendar</Link></li>
               <li><Link to="/admin/reports">Reports</Link></li>
             </ul>
-          </li>
+          </li> */}
 
           <NotificationBell />
 
