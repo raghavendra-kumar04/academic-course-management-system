@@ -1,5 +1,6 @@
 import "./navbar.css";
 import { Link } from "react-router-dom";
+import NotificationBell from "../notifications/NotificationBell";
 
 export default function Navbar() {
   return (
@@ -52,6 +53,8 @@ export default function Navbar() {
               <li><Link to="/admin/reports">Reports</Link></li>
             </ul>
           </li>
+
+          <NotificationBell />
 
           <li><Link to="/login" className="nav-btn">Login</Link></li>
         </ul>
