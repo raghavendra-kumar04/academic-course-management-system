@@ -22,6 +22,7 @@ import AcademicCalendar from "./Pages/admin/AcademicCalendar";
 import Reports from "./Pages/admin/Reports";
 
 import Notifications from "./Pages/Notifications";
+import StudentAnalytics from "./Pages/StudentAnalytics";
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
       <Route path="/admin/calendar" element={<AcademicCalendar />} />
       <Route path="/admin/reports" element={<Reports />} />
       <Route path="/notifications" element={<Notifications />} />
+      <Route path="/student/analytics" element={<StudentAnalytics />} />
     </Routes>
     </BrowserRouter>
   );
