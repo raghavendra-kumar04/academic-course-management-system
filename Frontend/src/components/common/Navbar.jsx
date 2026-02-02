@@ -5,16 +5,22 @@ import NotificationBell from "../notifications/NotificationBell";
 
 export default function Navbar() {
   const [user, setUser] = useState(null);
+  const [admin, setAdmin] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
     const storedUser = JSON.parse(localStorage.getItem("user"));
+    const storedAdmin = JSON.parse(localStorage.getItem("admin"));
+
     setUser(storedUser);
+    setAdmin(storedAdmin);
   }, []);
 
   const handleLogout = () => {
     localStorage.removeItem("user");
+    localStorage.removeItem("admin");
     setUser(null);
+    setAdmin(null);
     navigate("/");
   };
 
@@ -31,8 +37,22 @@ export default function Navbar() {
           <li><Link to="/">Home</Link></li>
           <li><Link to="/about">About</Link></li>
 
+          {/* ADMIN DROPDOWN */}
+          {admin && (
+            <li className="dropdown">
+              <span className="dropbtn">Admin ▾</span>
+              <ul className="dropdown-content">
+                <li><Link to="/admin/dashboard">Dashboard</Link></li>
+                <li><Link to="/admin/users">User Management</Link></li>
+                <li><Link to="/admin/courses">Course Setup</Link></li>
+                <li><Link to="/admin/calendar">Academic Calendar</Link></li>
+                <li><Link to="/admin/reports">Reports</Link></li>
+              </ul>
+            </li>
+          )}
+
           {/* STUDENT DROPDOWN */}
-          {user?.role === "student" && (
+          {!admin && user?.role === "student" && (
             <li className="dropdown">
               <span className="dropbtn">Student ▾</span>
               <ul className="dropdown-content">
@@ -46,7 +66,7 @@ export default function Navbar() {
           )}
 
           {/* TEACHER DROPDOWN */}
-          {user?.role === "teacher" && (
+          {!admin && user?.role === "teacher" && (
             <li className="dropdown">
               <span className="dropbtn">Teacher ▾</span>
               <ul className="dropdown-content">
@@ -61,7 +81,7 @@ export default function Navbar() {
 
           <NotificationBell />
 
-          {!user ? (
+          {!user && !admin ? (
             <li><Link to="/login" className="nav-btn">Login</Link></li>
           ) : (
             <li>
@@ -75,15 +95,3 @@ export default function Navbar() {
     </nav>
   );
 }
-
-                  {/* Admin Dropdown */}
-          {/* <li className="dropdown">
-            <span className="dropbtn">Admin ▾</span>
-            <ul className="dropdown-content">
-              <li><Link to="/admin/dashboard">Dashboard</Link></li>
-              <li><Link to="/admin/users">User Management</Link></li>
-              <li><Link to="/admin/courses">Course Setup</Link></li>
-              <li><Link to="/admin/calendar">Academic Calendar</Link></li>
-              <li><Link to="/admin/reports">Reports</Link></li>
-            </ul>
-          </li> */}

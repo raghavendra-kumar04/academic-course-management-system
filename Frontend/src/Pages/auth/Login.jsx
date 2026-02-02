@@ -89,12 +89,19 @@ export default function Login() {
           </>
         )}
 
-        <button
-          className="auth-btn"
-          onClick={isLoggedIn ? handleLogout : handleLogin}
-        >
-          {isLoggedIn ? "Logout" : "Login"}
-        </button>
+        <div className="auth-btn-group">
+          <button
+            className="auth-btn"
+            onClick={isLoggedIn ? handleLogout : handleLogin}
+          >
+            {isLoggedIn ? "Logout" : "Login"}
+          </button>
+
+          <button className="auth-btn admin-btn">
+            <Link to="/admin"> Admin Login </Link>
+          </button>
+        </div>
+
 
         {!isLoggedIn && (
           <div className="auth-links">
@@ -106,6 +113,7 @@ export default function Login() {
             </p>
           </div>
         )}
+        
       </div>
     </div>
   );
