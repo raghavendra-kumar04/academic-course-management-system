@@ -15,6 +15,7 @@ import AssignmentCreation from "./Pages/teacher/AssignmentCreation";
 import Submissions from "./Pages/teacher/Submissions";
 import GradeEntry from "./Pages/teacher/GradeEntry";
 // Admin Pages
+import Admin from "./Pages/auth/Admin";
 import AdminDashboard from "./Pages/admin/AdminDashboard";
 import UserManagement from "./Pages/admin/UserManagement";
 import CourseSetup from "./Pages/admin/CourseSetup";
@@ -23,6 +24,7 @@ import Reports from "./Pages/admin/Reports";
 
 import Notifications from "./Pages/Notifications";
 import StudentAnalytics from "./Pages/StudentAnalytics";
+
 
 function App() {
   return (
@@ -42,6 +44,7 @@ function App() {
       <Route path="/teacher/create-assignment" element={<AssignmentCreation />} />
       <Route path="/teacher/submissions" element={<Submissions />} />
       <Route path="/teacher/grade-entry" element={<GradeEntry />} />
+      <Route path="/admin" element={<Admin/>} />     
       <Route path="/admin/dashboard" element={<AdminDashboard />} />
       <Route path="/admin/users" element={<UserManagement />} />
       <Route path="/admin/courses" element={<CourseSetup />} />
