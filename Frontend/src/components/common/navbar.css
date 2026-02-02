@@ -16,7 +16,8 @@
 .navbar-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(62, 83, 113, 0.61);
+  /* background: rgba(62, 83, 113, 0.61); */
+  background: transparent;
   backdrop-filter: blur(4px);
 }
 
@@ -35,7 +36,7 @@
 .logo a {
   font-size: 1.6rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #000000;
   text-decoration: none;
   letter-spacing: 1px;
 }
@@ -50,7 +51,7 @@
 
 .nav-links a,
 .dropbtn {
-  color: #ffffff;
+  color: #000000;
   text-decoration: none;
   font-weight: 500;
   position: relative;
@@ -67,8 +68,9 @@
   bottom: -6px;
   width: 0%;
   height: 2px;
-  background: rgb(182, 216, 255);
+  background: rgb(120, 183, 255);
   transition: 0.3s;
+  border-radius: 25px;
 }
 
 .nav-links a:hover::after,
@@ -80,13 +82,14 @@
 .nav-btn {
   padding: 8px 18px;
   border-radius: 20px;
+  border: 1px solid black;
   background: linear-gradient(135deg, #6366f1, #8b5cf6);
   box-shadow: 0 6px 15px rgba(99,102,241,0.4);
 }
 
 .nav-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(139,92,246,0.6);
+  box-shadow: 0 10px 25px rgba(193, 166, 255, 0.6);
 }
 
 /* ---------------- DROPDOWN ---------------- */

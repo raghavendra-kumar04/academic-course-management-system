@@ -1,0 +1,110 @@
+/* components/notifications/notification.css */
+
+.notification-wrapper {
+  position: relative;
+}
+
+/* Bell Icon */
+.notification-bell {
+  cursor: pointer;
+  font-size: 1.4rem;
+  color: white;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.notification-bell:hover {
+  transform: rotate(-10deg) scale(1.1);
+}
+
+/* Badge */
+.notification-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: linear-gradient(135deg, #ef4444, #f97316);
+  color: white;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+/* Dropdown */
+.notification-dropdown {
+  position: absolute;
+  right: 0;
+  top: 44px;
+  width: 320px;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+  overflow: hidden;
+  animation: dropFade 0.35s ease;
+  z-index: 999;
+}
+
+.notification-header {
+  padding: 14px;
+  font-weight: 700;
+  color: #4f46e5;
+  background: linear-gradient(135deg, #eef2ff, #fdf4ff);
+}
+
+.notification-list {
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+/* Individual Item */
+.notification-item {
+  padding: 14px;
+  display: flex;
+  gap: 10px;
+  border-bottom: 1px solid #f1f5f9;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.notification-item:hover {
+  background: #eef2ff;
+}
+
+.notification-dot {
+  width: 8px;
+  height: 8px;
+  background: #6366f1;
+  border-radius: 50%;
+  margin-top: 6px;
+}
+
+.notification-content h4 {
+  font-size: 0.9rem;
+  margin: 0;
+  color: #1e293b;
+}
+
+.notification-content p {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+/* Empty */
+.notification-empty {
+  padding: 20px;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 0.85rem;
+}
+
+/* Animation */
+@keyframes dropFade {
+  from {
+    opacity: 0;
+    transform: translateY(-15px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
