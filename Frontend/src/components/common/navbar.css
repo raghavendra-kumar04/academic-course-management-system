@@ -90,6 +90,7 @@
 .nav-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(193, 166, 255, 0.6);
+  color: white;
 }
 
 /* ---------------- DROPDOWN ---------------- */
