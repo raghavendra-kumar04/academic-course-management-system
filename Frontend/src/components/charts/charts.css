@@ -1,0 +1,36 @@
+/* components/charts/charts.css */
+
+.chart-container {
+  background: white;
+  padding: 20px;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  transition: 0.4s ease;
+  animation: chartFade 0.6s ease;
+}
+
+.chart-container:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(79,70,229,0.25);
+}
+
+.chart-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  background: linear-gradient(135deg, #6366f1, #ec4899);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-align: center;
+}
+
+@keyframes chartFade {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

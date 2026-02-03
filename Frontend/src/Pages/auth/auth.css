@@ -1,0 +1,143 @@
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Segoe UI", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* blurred background */
+.auth-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/background-image.png") center / cover no-repeat;
+  filter: blur(6px);
+  transform: scale(1.1);
+  z-index: 0;
+}
+
+/* login card */
+.auth-card {
+  background: #ffffff;
+  padding: 2.5rem;
+  width: 360px;
+  border-radius: 16px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.18);
+  animation: fadeIn 0.6s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.auth-card h2 {
+  text-align: center;
+  margin-bottom: 1.8rem;
+  color: #4f46e5;
+  font-weight: 600;
+}
+
+/* inputs */
+.auth-card input,
+.auth-card select {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.25s ease;
+  background: #fafafa;
+}
+
+.auth-card input:focus,
+.auth-card select:focus {
+  background: #fff;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.18);
+}
+
+/* button group */
+.auth-btn-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 1.2rem;
+}
+
+/* buttons */
+.auth-btn {
+  flex: 1;
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  /* box-shadow: 0 8px 18px rgba(79, 70, 229, 0.3); */
+}
+
+/* hover & active */
+.auth-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 8px rgba(148, 143, 240, 0.607);
+}
+
+.auth-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 14px rgba(79, 70, 229, 0.25);
+}
+
+/* admin button */
+.admin-btn {
+  background: linear-gradient(135deg, #111827, #1f2933);
+}
+
+.admin-btn:hover {
+  box-shadow: 0 14px 26px rgba(0, 0, 0, 0.4);
+}
+
+/*  fix Link inside button */
+.auth-btn a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+}
+
+/* links */
+.auth-links {
+  margin-top: 1.4rem;
+  text-align: center;
+}
+
+.auth-links a {
+  color: #4f46e5;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.auth-links a:hover {
+  color: #3730a3;
+  text-decoration: underline;
+}
+
+/* animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

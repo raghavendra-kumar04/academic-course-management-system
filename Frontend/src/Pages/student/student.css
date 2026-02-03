@@ -1,0 +1,194 @@
+/* src/pages/student/student.css */
+
+.student-page {
+  position: relative;
+  z-index: 0;
+  min-height: 100vh;
+  padding: 90px 24px 24px;
+  overflow-x: hidden;
+}
+
+/* Fixed blurred background */
+.student-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("/student_background.png") center / cover no-repeat;
+  filter: blur(6px);
+  transform: scale(1.05);
+  z-index: -2;
+}
+
+/* Light overlay for readability */
+.student-page::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.35);
+  z-index: -1;
+}
+
+.student-page > * {
+  position: relative;
+  z-index: 1;
+}
+
+.student-header {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #4f46e5;
+  margin-bottom: 20px;
+}
+
+/* Card Layout */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: 0.4s ease;
+  overflow-x: auto;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(79,70,229,0.25);
+}
+
+/* Buttons */
+.btn {
+  padding: 10px 22px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+}
+
+/* Table */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  padding: 12px;
+  text-align: left;
+}
+
+.table th {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+
+.table tr:hover {
+  background: #eef2ff;
+}
+
+/* File Upload Styling */
+.file-upload {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 22px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(59,130,246,0.35);
+  transition: 0.25s ease;
+}
+
+.file-upload:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(99,102,241,0.45);
+}
+
+.file-upload input[type="file"] {
+  display: none;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+/* 
+For mobiles */
+@media (max-width: 480px) {
+
+  .student-page {
+    padding: 80px 14px 20px;
+  }
+
+  .student-header {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .card {
+    padding: 16px;
+    border-radius: 14px;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .file-upload {
+    width: 100%;
+    text-align: center;
+  }
+
+  .table th,
+  .table td {
+    padding: 8px;
+    font-size: 0.85rem;
+  }
+}
+
+/* For Tablets */
+@media (max-width: 768px) {
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .student-header {
+    font-size: 1.7rem;
+  }
+
+  .btn {
+    font-size: 0.95rem;
+  }
+}
+
+/* For small laptops */
+@media (max-width: 1024px) {
+
+  .student-page {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .card-grid {
+    gap: 16px;
+  }
+}
