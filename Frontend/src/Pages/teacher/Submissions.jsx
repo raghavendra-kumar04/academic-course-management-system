@@ -9,6 +9,20 @@ export default function Submissions() {
       <div className="teacher-page">
         <h2 className="teacher-header">Student Submissions</h2>
 
+        {/* Toolbar */}
+        <div className="submission-toolbar">
+          <input
+            className="input"
+            placeholder="Search student..."
+          />
+
+          <select className="input" style={{ maxWidth: "180px" }}>
+            <option>All</option>
+            <option>Pending</option>
+            <option>Graded</option>
+          </select>
+        </div>
+
         <div className="card">
           <table className="table">
             <thead>
@@ -30,11 +44,13 @@ export default function Submissions() {
                 <td>Normalization Assignment</td>
                 <td>18 Feb 2026</td>
                 <td>
-                  <a href="#" style={{ color: "#7c3aed" }}>
+                  <a href="#" className="file-link">
                     download.pdf
                   </a>
                 </td>
-                <td>Pending</td>
+                <td>
+                  <span className="status-pending">Pending</span>
+                </td>
                 <td>
                   <button className="btn btn-primary">
                     Evaluate
@@ -48,13 +64,15 @@ export default function Submissions() {
                 <td>Linear Regression</td>
                 <td>17 Feb 2026</td>
                 <td>
-                  <a href="#" style={{ color: "#7c3aed" }}>
+                  <a href="#" className="file-link">
                     assignment.docx
                   </a>
                 </td>
-                <td>Graded</td>
                 <td>
-                  <button className="btn btn-primary">
+                  <span className="status-graded">Graded</span>
+                </td>
+                <td>
+                  <button className="btn btn-outline">
                     View
                   </button>
                 </td>
