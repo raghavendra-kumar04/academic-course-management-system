@@ -1,0 +1,108 @@
+.stat-card {
+  text-align: center;
+}
+
+.stat {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #4f46e5;
+  margin-top: 10px;
+}
+
+/* Main dashboard layout */
+
+.dashboard-grid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 22px;
+}
+
+/* Lists */
+
+.list {
+  margin-top: 12px;
+  padding-left: 16px;
+}
+
+.list li {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+/* Progress */
+
+.progress-item {
+  margin-top: 14px;
+}
+
+.progress-item span {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 20px;
+  margin-top: 6px;
+  overflow: hidden;
+}
+
+.progress-bar div {
+  height: 100%;
+  background: linear-gradient(135deg,#6366f1,#8b5cf6);
+  border-radius: 20px;
+}
+
+/* ===== Gradient Cards ===== */
+
+/* Enrolled Courses */
+.stat-card:nth-child(1) {
+  background: linear-gradient(135deg,#d6fdff,#c8e9ff);
+}
+
+/* Assignments */
+.stat-card:nth-child(2) {
+  background: linear-gradient(135deg,#fdf4ff,#fae8ff);
+}
+
+/* Average Grade */
+.stat-card:nth-child(3) {
+  background: linear-gradient(135deg,#ecfdf5,#d1fae5);
+}
+
+/* Dashboard Content Cards */
+
+.dashboard-grid .card:nth-child(1) {
+  background: linear-gradient(135deg,#eef2ff,#ffffff);
+}
+
+.dashboard-grid .card:nth-child(2) {
+  background: linear-gradient(135deg,#f0fdf4,#ffffff);
+}
+
+.dashboard-grid .card:nth-child(3) {
+  background: linear-gradient(135deg,#fff7ed,#ffffff);
+}
+
+/* Extra polish */
+
+.card {
+  backdrop-filter: blur(6px);
+}
+
+/* Hover glow enhancement */
+
+.card:hover {
+  box-shadow: 0 18px 45px rgba(99,102,241,0.25);
+}
+
+
+/* Mobile */
+
+@media(max-width:480px){
+  .stat{
+    font-size:1.8rem;
+  }
+}
