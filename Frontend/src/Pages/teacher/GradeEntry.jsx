@@ -7,58 +7,66 @@ export default function GradeEntry() {
   const [marks, setMarks] = useState("");
   const [remarks, setRemarks] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Later: connect to gradeService.js
-    console.log({ grade, marks, remarks });
-  };
-
   return (
     <>
       <Navbar />
 
       <div className="teacher-page">
-        <h2 className="teacher-header">Grade Entry</h2>
+        <h2 className="teacher-header">Grade Evaluation</h2>
 
-        {/* Submission Details */}
-        <div className="card">
-          <h3>Submission Details</h3>
-          <p><strong>Student:</strong> Rahul Sharma</p>
-          <p><strong>Course:</strong> DBMS</p>
-          <p><strong>Assignment:</strong> Normalization Assignment</p>
-          <p>
-            <strong>Submitted File:</strong>{" "}
-            <a href="#" style={{ color: "#7c3aed" }}>
-              download.pdf
-            </a>
-          </p>
-        </div>
+        <div className="grade-layout">
 
-        <br />
+          {/* Left Panel */}
+          <div className="card">
 
-        {/* Grade Form */}
-        <div className="card">
-          <form onSubmit={handleSubmit}>
-            {/* Marks */}
-            <label>Marks Obtained</label>
+            <h3>Submission Overview</h3>
+
+            <div className="student-meta">
+              <p><strong>Student:</strong> Rahul Sharma</p>
+              <p><strong>Course:</strong> DBMS</p>
+              <p><strong>Assignment:</strong> Normalization Assignment</p>
+
+              <span className="status">Submitted</span>
+            </div>
+
+            <a href="#" className="download-link">📄 Download Submission</a>
+
+            <hr />
+
+            <h4>Evaluation Rubric</h4>
+
+            <ul className="rubric">
+              <li><input type="checkbox" /> Correct normalization</li>
+              <li><input type="checkbox" /> Proper ER diagrams</li>
+              <li><input type="checkbox" /> SQL queries included</li>
+              <li><input type="checkbox" /> Explanation clarity</li>
+            </ul>
+
+          </div>
+
+          {/* Right Panel */}
+          <div className="card">
+
+            <h3>Grade Entry</h3>
+
+            <label>Marks (out of 100)</label>
             <input
               type="number"
               className="input"
-              placeholder="e.g. 85"
+              placeholder="85"
               value={marks}
               onChange={(e) => setMarks(e.target.value)}
-              required
             />
 
-            <br /><br />
+            <div className="grade-bar">
+              <div style={{ width: `${marks || 0}%` }} />
+            </div>
 
-            {/* Grade */}
             <label>Grade</label>
             <select
               className="input"
               value={grade}
               onChange={(e) => setGrade(e.target.value)}
-              required
             >
               <option value="">Select Grade</option>
               <option>A+</option>
@@ -68,24 +76,25 @@ export default function GradeEntry() {
               <option>C</option>
             </select>
 
-            <br /><br />
-
-            {/* Remarks */}
             <label>Remarks</label>
             <textarea
               rows="3"
               className="input"
-              placeholder="Optional feedback for student"
+              placeholder="Feedback for student"
               value={remarks}
               onChange={(e) => setRemarks(e.target.value)}
             />
 
-            <br /><br />
+            <div className="grade-preview">
+              Final Grade: <strong>{grade || "—"}</strong>
+            </div>
 
-            <button type="submit" className="btn btn-primary">
-              Save Grade
+            <button className="btn btn-primary full">
+              Save Evaluation
             </button>
-          </form>
+
+          </div>
+
         </div>
       </div>
     </>
