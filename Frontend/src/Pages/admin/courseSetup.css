@@ -1,0 +1,134 @@
+.course-page {
+  min-height: 100vh;
+  padding: 90px 24px 24px;
+  background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+  animation: fadeIn 0.6s ease;
+}
+
+.course-header {
+  font-size: 2.4rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #4f46e5, #8b5cf6);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 4px;
+}
+
+.course-subtitle {
+  color: #4338ca;
+  margin-bottom: 22px;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.course-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 26px;
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+.course-card {
+  background: white;
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: 0.35s ease;
+  border: 1px solid rgba(79,70,229,0.08);
+}
+
+.course-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(79,70,229,0.25);
+}
+
+.course-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.course-top h3 {
+  font-size: 1.1rem;
+  color: #1e1b4b;
+}
+
+.status {
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.status.active {
+  background: #ecfdf5;
+  color: #065f46;
+}
+
+.status.draft {
+  background: #fffbeb;
+  color: #92400e;
+}
+
+.course-meta {
+  font-size: 0.9rem;
+  color: #475569;
+  margin-bottom: 4px;
+}
+
+.course-controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+.course-btn {
+  padding: 10px 22px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  background: white;
+  color: #4338ca;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: 0.3s ease;
+}
+
+.course-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+}
+
+.course-btn.primary {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+}
+
+.course-btn.small {
+  padding: 8px 16px;
+  font-size: 0.8rem;
+}
+
+.course-btn.danger {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

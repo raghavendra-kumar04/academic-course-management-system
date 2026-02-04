@@ -1,28 +1,41 @@
 // components/notifications/NotificationBell.jsx
-import { useState } from "react";
+import { useState, useRef } from "react";
 import NotificationItem from "./NotificationItem";
 import "./notification.css";
 
 export default function NotificationBell() {
   const [open, setOpen] = useState(false);
+  const timeoutRef = useRef(null);
 
-  const notifications = [
+  const [notifications, setNotifications] = useState([
     {
+      id: 1,
       title: "Assignment Posted",
       message: "New DBMS assignment is available"
     },
     {
+      id: 2,
       title: "Grade Updated",
       message: "Your ML grade has been published"
     }
-  ];
+  ]);
+
+  const markAsRead = (id) => {
+    setNotifications((prev) => prev.filter((n) => n.id !== id));
+  };
 
   return (
-    <div className="notification-wrapper">
-      <div
-        className="notification-bell"
-        onClick={() => setOpen(!open)}
-      >
+    <div
+      className="notification-wrapper"
+      onMouseEnter={() => {
+        if (timeoutRef.current) clearTimeout(timeoutRef.current);
+        setOpen(true);
+      }}
+      onMouseLeave={() => {
+        timeoutRef.current = setTimeout(() => setOpen(false), 150);
+      }}
+    >
+      <div className="notification-bell">
         🔔
         {notifications.length > 0 && (
           <span className="notification-badge">
@@ -34,7 +47,15 @@ export default function NotificationBell() {
       {open && (
         <div className="notification-dropdown">
           <div className="notification-header">
-            Notifications
+            <span>Notifications</span>
+            {notifications.length > 0 && (
+              <button
+                className="mark-all"
+                onClick={() => setNotifications([])}
+              >
+                Mark all as read
+              </button>
+            )}
           </div>
 
           <div className="notification-list">
@@ -43,11 +64,12 @@ export default function NotificationBell() {
                 No new notifications
               </div>
             ) : (
-              notifications.map((n, i) => (
+              notifications.map((n) => (
                 <NotificationItem
-                  key={i}
+                  key={n.id}
                   title={n.title}
                   message={n.message}
+                  onRead={() => markAsRead(n.id)}
                 />
               ))
             )}
