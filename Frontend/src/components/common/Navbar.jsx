@@ -1,26 +1,33 @@
 import "./navbar.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import NotificationBell from "../notifications/NotificationBell";
 
 export default function Navbar() {
   const [user, setUser] = useState(null);
   const [admin, setAdmin] = useState(null);
+
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const syncAuth = () => {
+    setUser(JSON.parse(localStorage.getItem("user")));
+    setAdmin(JSON.parse(localStorage.getItem("admin")));
+  };
 
   useEffect(() => {
-    const storedUser = JSON.parse(localStorage.getItem("user"));
-    const storedAdmin = JSON.parse(localStorage.getItem("admin"));
+    syncAuth();
+  }, [location.pathname]);
 
-    setUser(storedUser);
-    setAdmin(storedAdmin);
+  useEffect(() => {
+    window.addEventListener("storage", syncAuth);
+    return () => window.removeEventListener("storage", syncAuth);
   }, []);
 
   const handleLogout = () => {
     localStorage.removeItem("user");
     localStorage.removeItem("admin");
-    setUser(null);
-    setAdmin(null);
+    syncAuth();
     navigate("/");
   };
 
@@ -37,7 +44,6 @@ export default function Navbar() {
           <li><Link to="/">Home</Link></li>
           <li><Link to="/about">About</Link></li>
 
-          {/* ADMIN DROPDOWN */}
           {admin && (
             <li className="dropdown">
               <span className="dropbtn">Admin ▾</span>
@@ -51,7 +57,6 @@ export default function Navbar() {
             </li>
           )}
 
-          {/* STUDENT DROPDOWN */}
           {!admin && user?.role === "student" && (
             <li className="dropdown">
               <span className="dropbtn">Student ▾</span>
@@ -65,7 +70,6 @@ export default function Navbar() {
             </li>
           )}
 
-          {/* TEACHER DROPDOWN */}
           {!admin && user?.role === "teacher" && (
             <li className="dropdown">
               <span className="dropbtn">Teacher ▾</span>

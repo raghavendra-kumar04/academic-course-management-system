@@ -9,8 +9,9 @@ export default function Admin() {
   const [password, setPassword] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+  // Check login status on load
   useEffect(() => {
-    const admin = localStorage.getItem("admin");
+    const admin = JSON.parse(localStorage.getItem("admin"));
     if (admin) setIsLoggedIn(true);
   }, []);
 
@@ -22,15 +23,14 @@ export default function Admin() {
       return;
     }
 
-    localStorage.setItem(
-      "admin",
-      JSON.stringify({
-        username,
-        role: "admin",
-      })
-    );
+    const admin = {
+      username,
+      role: "admin",
+    };
 
+    localStorage.setItem("admin", JSON.stringify(admin));
     setIsLoggedIn(true);
+
     navigate("/admin/dashboard");
   };
 
@@ -54,6 +54,7 @@ export default function Admin() {
               placeholder="Username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
+              autoFocus
             />
 
             <input
@@ -65,13 +66,15 @@ export default function Admin() {
           </>
         )}
 
-        <button
-          type="submit"
-          className="admin-btn"
-          onClick={isLoggedIn ? handleLogout : null}
-        >
-          {isLoggedIn ? "Logout" : "Login"}
-        </button>
+        {!isLoggedIn ? (
+          <button type="submit" className="admin-btn">
+            Login
+          </button>
+        ) : (
+          <button type="button" className="admin-btn" onClick={handleLogout}>
+            Logout
+          </button>
+        )}
 
         {!isLoggedIn && (
           <div className="admin-links">
