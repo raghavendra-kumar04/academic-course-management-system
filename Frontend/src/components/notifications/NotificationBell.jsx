@@ -1,4 +1,3 @@
-// components/notifications/NotificationBell.jsx
 import { useState } from "react";
 import NotificationItem from "./NotificationItem";
 import "./notification.css";
@@ -9,20 +8,21 @@ export default function NotificationBell() {
   const notifications = [
     {
       title: "Assignment Posted",
-      message: "New DBMS assignment is available"
+      message: "New DBMS assignment is available",
     },
     {
       title: "Grade Updated",
-      message: "Your ML grade has been published"
-    }
+      message: "Your ML grade has been published",
+    },
   ];
 
   return (
-    <div className="notification-wrapper">
-      <div
-        className="notification-bell"
-        onClick={() => setOpen(!open)}
-      >
+    <div
+      className="notification-wrapper"
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+    >
+      <div className="notification-bell">
         🔔
         {notifications.length > 0 && (
           <span className="notification-badge">
