@@ -1,0 +1,568 @@
+/* src/pages/admin/admin.css */
+
+.admin-page {
+  min-height: 100vh;
+  padding: 90px 24px 24px;
+  background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+  color: #1e1b4b;
+  animation: fadeIn 0.6s ease;
+}
+
+/* Header */
+.admin-header {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  background: linear-gradient(135deg, #4f46e5, #8b5cf6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Cards */
+.admin-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+.admin-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: 0.4s ease;
+  border: 1px solid rgba(79,70,229,0.08);
+}
+
+.admin-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(79,70,229,0.25);
+}
+
+/* Buttons */
+.admin-btn {
+  padding: 10px 24px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.admin-btn.primary {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: #ffffff;
+}
+
+.admin-btn.primary:hover {
+  transform: scale(1.05);
+}
+
+/* Table */
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 14px;
+  border-bottom: 1px solid #e0e7ff;
+}
+
+.admin-table th {
+  background: #e0e7ff;
+  color: #3730a3;
+  text-align: left;
+}
+
+.admin-table tr:hover {
+  background: #eef2ff;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* src/pages/admin/admin.css */
+
+.admin-page {
+  min-height: 100vh;
+  padding: 90px 24px 40px;
+  background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+  color: #1e1b4b;
+  animation: fadeIn 0.6s ease;
+}
+
+/* Header */
+
+.admin-header {
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #4f46e5, #8b5cf6);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Toolbar */
+
+.admin-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 26px;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.admin-search {
+  padding: 10px 18px;
+  border-radius: 20px;
+  border: 1px solid #c7d2fe;
+  outline: none;
+  min-width: 220px;
+}
+
+/* Cards */
+
+.admin-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+.admin-card {
+  position: relative;
+  background: rgba(255,255,255,0.75);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: 0.4s ease;
+  border: 1px solid rgba(79,70,229,0.1);
+  overflow: hidden;
+}
+
+.admin-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(99,102,241,0.12));
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.admin-card:hover::after {
+  opacity: 1;
+}
+
+.admin-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 25px 45px rgba(79,70,229,0.25);
+}
+
+.admin-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.admin-card p {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #4f46e5;
+}
+
+/* Quick Actions */
+
+.admin-actions {
+  margin-top: 30px;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+
+.admin-btn {
+  padding: 10px 24px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.admin-btn.primary {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: #ffffff;
+}
+
+.admin-btn.primary:hover {
+  transform: scale(1.08);
+}
+
+.admin-btn.secondary {
+  background: #eef2ff;
+  color: #4f46e5;
+}
+
+/* Tables */
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 14px;
+  border-bottom: 1px solid #e0e7ff;
+}
+
+.admin-table th {
+  background: #e0e7ff;
+  color: #3730a3;
+  text-align: left;
+}
+
+.admin-table tr:hover {
+  background: #eef2ff;
+}
+
+/* Activity Panel */
+
+.admin-activity {
+  margin-top: 40px;
+  background: white;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.admin-activity h4 {
+  margin-bottom: 14px;
+}
+
+.activity-item {
+  padding: 10px 0;
+  border-bottom: 1px dashed #c7d2fe;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .admin-header {
+    font-size: 1.9rem;
+  }
+
+  .admin-card p {
+    font-size: 1.6rem;
+  }
+}
+
+/* Animation */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ================= Academic Calendar ================= */
+
+.calendar-grid {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.calendar-card {
+  background: rgba(255,255,255,0.85);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  border-left: 6px solid #6366f1;
+  transition: 0.35s ease;
+}
+
+.calendar-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(99,102,241,0.25);
+}
+
+.calendar-date {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #6366f1;
+  margin-bottom: 6px;
+}
+
+.calendar-title {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.calendar-status {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.status-upcoming {
+  background: #eef2ff;
+  color: #4f46e5;
+}
+
+.status-active {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.status-complete {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* Add Event Button */
+
+.calendar-actions {
+  margin-top: 25px;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* Timeline */
+
+.calendar-timeline {
+  margin-top: 40px;
+  border-left: 3px dashed #c7d2fe;
+  padding-left: 20px;
+}
+
+.timeline-item {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -11px;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  background: #6366f1;
+  border-radius: 50%;
+}
+
+.timeline-item h4 {
+  font-size: 0.95rem;
+}
+
+.timeline-item span {
+  font-size: 0.8rem;
+  color: #6366f1;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .calendar-card {
+    padding: 16px;
+  }
+}
+/* ================= Course Setup Enhancements ================= */
+
+/* Course Status */
+
+.course-status {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.course-active {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.course-draft {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* Course Action Buttons */
+
+.course-actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Admin Card Improvements for Courses */
+
+.admin-card h3 {
+  font-size: 1.15rem;
+}
+
+.admin-card p {
+  margin: 4px 0;
+}
+
+/* Category Badge */
+
+.course-category {
+  display: inline-block;
+  background: #eef2ff;
+  color: #4f46e5;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 14px;
+  margin-bottom: 6px;
+}
+
+/* Hover Effect */
+
+.admin-card:hover .course-category {
+  background: #6366f1;
+  color: white;
+}
+
+/* Responsive Course Cards */
+
+@media (max-width: 640px) {
+  .course-actions {
+    flex-direction: column;
+  }
+}
+/* ================= Reports & Analytics ================= */
+
+.report-grid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 22px;
+}
+
+.report-card {
+  background: rgba(255,255,255,0.85);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+
+.report-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(99,102,241,0.25);
+}
+
+.report-card h4 {
+  margin-bottom: 12px;
+}
+
+/* Progress Bars */
+
+.progress-bar {
+  height: 8px;
+  background: #e0e7ff;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.progress-bar span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(135deg,#6366f1,#8b5cf6);
+}
+
+/* Responsive */
+
+@media (max-width: 640px) {
+  .report-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* ================= User Management ================= */
+
+.user-status {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.status-active {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.status-disabled {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* User Action Buttons */
+
+.user-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Table Responsive */
+
+@media (max-width: 768px) {
+  .admin-table thead {
+    display: none;
+  }
+
+  .admin-table tr {
+    display: block;
+    margin-bottom: 16px;
+    background: white;
+    padding: 12px;
+    border-radius: 14px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  }
+
+  .admin-table td {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border: none;
+  }
+}

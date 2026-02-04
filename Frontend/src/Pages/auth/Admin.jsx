@@ -9,29 +9,28 @@ export default function Admin() {
   const [password, setPassword] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  // Check login status on page load
   useEffect(() => {
     const admin = localStorage.getItem("admin");
-    if (admin) {
-      setIsLoggedIn(true);
-    }
+    if (admin) setIsLoggedIn(true);
   }, []);
 
-  const handleLogin = () => {
+  const handleLogin = (e) => {
+    e.preventDefault();
+
     if (!username || !password) {
       alert("Please fill in all fields");
       return;
     }
 
-    const admin = {
-      username,
-      role: "admin",
-    };
+    localStorage.setItem(
+      "admin",
+      JSON.stringify({
+        username,
+        role: "admin",
+      })
+    );
 
-    localStorage.setItem("admin", JSON.stringify(admin));
     setIsLoggedIn(true);
-
-    // Navigate to admin dashboard
     navigate("/admin/dashboard");
   };
 
@@ -40,13 +39,12 @@ export default function Admin() {
     setIsLoggedIn(false);
     setUsername("");
     setPassword("");
-
     navigate("/");
   };
 
   return (
     <div className="admin-container">
-      <div className="admin-card">
+      <form className="admin-card" onSubmit={handleLogin}>
         <h2>{isLoggedIn ? "Welcome Admin 🎉" : "Admin Login"}</h2>
 
         {!isLoggedIn && (
@@ -56,7 +54,6 @@ export default function Admin() {
               placeholder="Username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              required
             />
 
             <input
@@ -64,14 +61,14 @@ export default function Admin() {
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              required
             />
           </>
         )}
 
         <button
+          type="submit"
           className="admin-btn"
-          onClick={isLoggedIn ? handleLogout : handleLogin}
+          onClick={isLoggedIn ? handleLogout : null}
         >
           {isLoggedIn ? "Logout" : "Login"}
         </button>
@@ -81,7 +78,7 @@ export default function Admin() {
             <Link to="/forgot-password">Forgot Password?</Link>
           </div>
         )}
-      </div>
+      </form>
     </div>
   );
 }
